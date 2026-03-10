@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Autoservice Becker Dippoldiswalde | Kfz-Werkstatt & Assistenzsysteme</title>
+  <meta name="description" content="Autoservice Becker in Dippoldiswalde - Ihre Kfz-Meisterwerkstatt für VW, Audi, Seat, Skoda. Spezialisiert auf Assistenzsystem-Kalibrierung, Achsvermessung und Motorgeräte-Service.">
+  <style>
+    :root {
+      --primary: #0b3a63;
+      --primary-dark: #082d4d;
+      --accent: #f4b000;
+      --accent-dark: #d99d00;
+      --text: #1f2937;
+      --text-light: #6b7280;
+      --bg: #ffffff;
+      --bg-gray: #f9fafb;
+      --border: #e5e7eb;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Header & Navigation */
+    header {
+      background: var(--primary);
+      color: white;
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: white;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: white;
+      padding: 4rem 0;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .hero-subtitle {
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+      opacity: 0.95;
+    }
+
+    .hero-features {
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      margin: 2rem 0;
+      flex-wrap: wrap;
+    }
+
+    .hero-feature {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1rem;
+    }
+
+    .hero-feature::before {
+      content: "✓";
+      background: var(--accent);
+      color: var(--primary);
+      width: 1.5rem;
+      height: 1.5rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 1rem 2rem;
+      background: var(--accent);
+      color: var(--primary);
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: all 0.3s;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .btn:hover {
+      background: var(--accent-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(244, 176, 0, 0.3);
+    }
+
+    .btn-secondary {
+      background: white;
+      color: var(--primary);
+      border: 2px solid white;
+    }
+
+    .btn-secondary:hover {
+      background: transparent;
+      color: white;
+    }
+
+    /* Section Styles */
+    section {
+      padding: 4rem 0;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: var(--text-light);
+      margin-bottom: 3rem;
+      font-size: 1.1rem;
+    }
+
+    /* Cards Grid */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem;
+      transition: all 0.3s;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    }
+
+    .card-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .card h3 {
+      color: var(--primary);
+      margin-bottom: 0.75rem;
+      font-size: 1.25rem;
+    }
+
+    .card p {
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+
+    /* Highlight Section */
+    .highlight-section {
+      background: var(--bg-gray);
+      border-left: 4px solid var(--accent);
+      padding: 2rem;
+      border-radius: 8px;
+      margin: 2rem 0;
+    }
+
+    .highlight-section h3 {
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    /* Feature List */
+    .feature-list {
+      list-style: none;
+      display: grid;
+      gap: 1rem;
+    }
+
+    .feature-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1rem;
+      background: white;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+    }
+
+    .feature-list li::before {
+      content: "✓";
+      background: var(--accent);
+      color: var(--primary);
+      width: 1.5rem;
+      height: 1.5rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      flex-shrink: 0;
+    }
+
+    /* Contact Section */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .contact-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      border: 2px solid var(--border);
+      text-align: center;
+    }
+
+    .contact-card-icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: var(--primary);
+    }
+
+    .contact-card h3 {
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-card a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .contact-card a:hover {
+      text-decoration: underline;
+    }
+
+    /* FAQ */
+    .faq-item {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .faq-item:hover {
+      border-color: var(--primary);
+    }
+
+    .faq-question {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    .faq-answer {
+      margin-top: 1rem;
+      color: var(--text-light);
+      display: none;
+      line-height: 1.6;
+    }
+
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+
+    .faq-toggle {
+      font-size: 1.5rem;
+      color: var(--accent);
+      transition: transform 0.3s;
+    }
+
+    .faq-item.active .faq-toggle {
+      transform: rotate(45deg);
+    }
+
+    /* Footer */
+    footer {
+      background: var(--primary);
+      color: white;
+      padding: 3rem 0 1.5rem;
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .footer-section h3 {
+      margin-bottom: 1rem;
+      color: var(--accent);
+    }
+
+    .footer-section p,
+    .footer-section a {
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-section a:hover {
+      color: var(--accent);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      color: rgba(255,255,255,0.6);
+    }
+
+    .demo-banner {
+      background: var(--accent);
+      color: var(--primary);
+      padding: 0.75rem;
+      text-align: center;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 1.75rem;
+      }
+
+      .hero-subtitle {
+        font-size: 1rem;
+      }
+
+      .hero-features {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+      }
+
+      .section-title {
+        font-size: 1.5rem;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        gap: 1rem;
+        padding-top: 1rem;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .cards-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="demo-banner">
+    🛠️ DEMO-ENTWURF – Nur zur internen Abstimmung mit Autoservice Becker
+  </div>
+
+  <header>
+    <div class="container">
+      <nav>
+        <a href="#home" class="logo">Autoservice Becker</a>
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#leistungen">Leistungen</a></li>
+          <li><a href="#assistenzsysteme">Assistenzsysteme</a></li>
+          <li><a href="#motorgeraete">Motorgeräte</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="container">
+      <h1>Ihre Kfz-Meisterwerkstatt in Dippoldiswalde</h1>
+      <p class="hero-subtitle">Spezialisiert auf VW, Audi, Seat und Skoda – mit Kalibrierung von Fahrzeugassistenzsystemen auf Herstellerniveau</p>
+      
+      <div class="hero-features">
+        <div class="hero-feature">Unabhängige Meisterwerkstatt</div>
+        <div class="hero-feature">Faire Preise & schnelle Hilfe</div>
+        <div class="hero-feature">Moderne Diagnosetechnik</div>
+      </div>
+
+      <div style="margin-top: 2rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <a href="#kontakt" class="btn">Jetzt Termin vereinbaren</a>
+        <a href="#leistungen" class="btn btn-secondary">Unsere Leistungen</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="leistungen">
+    <div class="container">
+      <h2 class="section-title">Unsere Leistungen für Ihr Fahrzeug</h2>
+      <p class="section-subtitle">Von der Inspektion bis zur High-Tech-Kalibrierung – alles aus einer Hand</p>
+
+      <div class="cards-grid">
+        <div class="card">
+          <div class="card-icon">🎯</div>
+          <h3>3D-Achsvermessung</h3>
+          <p>Präzise Fahrwerksvermessung mit modernster Hunter-Technologie für optimales Fahrverhalten und gleichmäßigen Reifenverschleiß.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">🔧</div>
+          <h3>Inspektion & Reparatur</h3>
+          <p>Wartung und Reparatur nach Herstellervorgaben für alle VW-Konzernfahrzeuge. Instandsetzung statt teurer Neuteile wo möglich.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">❄️</div>
+          <h3>Klimaanlagen-Service</h3>
+          <p>Wartung, Befüllung und Reparatur von Klimaanlagen sowie Service für Standheizungen aller Art.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">⚡</div>
+          <h3>Kfz-Elektrik & Diagnose</h3>
+          <p>Original ODIS-Diagnosesystem mit Online-Werksanbindung für VW, Audi, Seat und Skoda. Fehlerdiagnose auf Herstellerniveau.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">🔄</div>
+          <h3>Lichtmaschinen & Anlasser</h3>
+          <p>Regenerierung von Lichtmaschinen und Anlassern – kostengünstige Alternative zum Neuteil ohne Qualitätsverlust.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">🚗</div>
+          <h3>Reifendienst</h3>
+          <p>Reifenwechsel, Einlagerung und fachgerechte Montage. Für sicheres Fahren zu jeder Jahreszeit.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="assistenzsysteme" style="background: var(--bg-gray);">
+    <div class="container">
+      <h2 class="section-title">Fahrzeugassistenzsysteme kalibrieren</h2>
+      <p class="section-subtitle">Sicherheit durch präzise Kalibrierung auf Herstellerniveau</p>
+
+      <div class="highlight-section">
+        <h3>Warum Kalibrierung so wichtig ist</h3>
+        <p>Moderne Fahrzeugassistenzsysteme wie Spurhalteassistent, Notbremsassistent oder adaptive Geschwindigkeitsregelung greifen aktiv in das Fahrverhalten ein. Diese Systeme können aber nur zuverlässig funktionieren, wenn die zugrunde liegenden Messdaten exakt stimmen.</p>
+        
+        <p style="margin-top: 1rem;">Nach bestimmten Arbeiten am Fahrzeug muss eine professionelle Kalibrierung durchgeführt werden, damit die Assistenzsysteme wieder präzise arbeiten und Ihre Sicherheit gewährleistet ist.</p>
+      </div>
+
+      <h3 style="margin: 2rem 0 1rem; color: var(--primary);">Wann ist eine Kalibrierung notwendig?</h3>
+      
+      <ul class="feature-list">
+        <li>Nach einem Scheibenwechsel (Kamera hinter der Frontscheibe)</li>
+        <li>Nach Arbeiten am Fahrwerk oder der Achsgeometrie</li>
+        <li>Nach einer Unfallreparatur im Frontbereich</li>
+        <li>Nach dem Austausch von Stoßfängern mit Radarsensoren</li>
+        <li>Bei Fehlermeldungen der Assistenzsysteme</li>
+      </ul>
+
+      <div class="highlight-section" style="margin-top: 2rem; background: white; border-left-color: var(--primary);">
+        <h3>Kalibrierung auf Herstellerniveau für VW-Konzernfahrzeuge</h3>
+        <p>Autoservice Becker verfügt über die technische Ausstattung und das Know-how, um Assistenzsysteme von VW, Audi, Seat und Skoda exakt nach Werksvorgaben zu kalibrieren.</p>
+        
+        <p style="margin-top: 1rem;"><strong>Ihre Vorteile:</strong></p>
+        <ul style="margin-top: 0.5rem; margin-left: 1.5rem; color: var(--text-light);">
+          <li>Maximale Sicherheit durch präzise Einstellung</li>
+          <li>Zuverlässiges Funktionieren aller Assistenzsysteme</li>
+          <li>Erhalt von Garantieansprüchen durch fachgerechte Kalibrierung</li>
+          <li>Vermeidung von Fehlfunktionen und teuren Folgeschäden</li>
+        </ul>
+      </div>
+
+      <div style="text-align: center; margin-top: 3rem;">
+        <a href="#kontakt" class="btn">Jetzt Kalibrierungs-Termin anfragen</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="motorgeraete">
+    <div class="container">
+      <h2 class="section-title">Motorgeräte-Service & Stihl-Servicepartner</h2>
+      <p class="section-subtitle">Verkauf, Reparatur und Service für Motorgeräte aller Art</p>
+
+      <div class="cards-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+        <div class="card">
+          <div class="card-icon">🛠️</div>
+          <h3>Reparatur & Wartung</h3>
+          <p>Fachgerechte Reparatur und Wartung von Rasenmähern, Motorsägen, Trimmern und anderen Motorgeräten. Schnelle Diagnose und zuverlässige Instandsetzung.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">🌲</div>
+          <h3>Stihl-Servicepartner</h3>
+          <p>Als offizieller Stihl-Servicepartner bieten wir Originalteile, fachkundige Beratung und professionellen Service für alle Stihl-Geräte.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">⚙️</div>
+          <h3>Verkauf & Beratung</h3>
+          <p>Beratung beim Kauf neuer Motorgeräte sowie Verkauf von Ersatzteilen und Zubehör. Wir finden das passende Gerät für Ihre Bedürfnisse.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" style="background: var(--bg-gray);">
+    <div class="container">
+      <h2 class="section-title">Häufig gestellte Fragen</h2>
+      <p class="section-subtitle">Antworten auf die wichtigsten Fragen rund um unseren Service</p>
+
+      <div class="faq-item" onclick="toggleFAQ(this)">
+        <div class="faq-question">
+          <span>Welche Fahrzeugmarken reparieren Sie?</span>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          Wir sind spezialisiert auf Fahrzeuge des VW-Konzerns (VW, Audi, Seat, Skoda), führen aber auch Arbeiten an anderen Marken durch. Für eine unverbindliche Anfrage zu Ihrem Fahrzeug kontaktieren Sie uns gerne.
+        </div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFAQ(this)">
+        <div class="faq-question">
+          <span>Wie lange dauert eine Assistenzsystem-Kalibrierung?</span>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          Je nach System und Fahrzeug dauert die Kalibrierung zwischen 1 und 3 Stunden. Wir informieren Sie vorab über den genauen Zeitaufwand für Ihr Fahrzeug.
+        </div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFAQ(this)">
+        <div class="faq-question">
+          <span>Bieten Sie einen Hol- und Bringservice an?</span>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          Für Kunden aus Dippoldiswalde und der näheren Umgebung bieten wir nach Absprache einen Hol- und Bringservice an. Sprechen Sie uns bei der Terminvereinbarung darauf an.
+        </div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFAQ(this)">
+        <div class="faq-question">
+          <span>Kann ich während der Reparatur warten?</span>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          Bei kleineren Arbeiten ist das Warten in unserer Werkstatt kein Problem. Bei umfangreicheren Reparaturen empfehlen wir eine Terminabsprache und bieten je nach Verfügbarkeit einen Ersatzwagen an.
+        </div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFAQ(this)">
+        <div class="faq-question">
+          <span>Führen Sie auch HU/AU durch?</span>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          Wir bereiten Ihr Fahrzeug optimal auf die Hauptuntersuchung vor und kümmern uns um alle notwendigen Reparaturen. Die HU selbst wird von einer autorisierten Prüforganisation durchgeführt.
+        </div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFAQ(this)">
+        <div class="faq-question">
+          <span>Welche Zahlungsmöglichkeiten gibt es?</span>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          Wir akzeptieren Barzahlung, EC-Karte und Überweisung. Bei größeren Reparaturen können wir nach Absprache auch Ratenzahlung anbieten.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="kontakt">
+    <div class="container">
+      <h2 class="section-title">Kontakt & Anfahrt</h2>
+      <p class="section-subtitle">Wir sind für Sie da – persönlich, schnell und unkompliziert</p>
+
+      <div class="contact-grid">
+        <div class="contact-card">
+          <div class="contact-card-icon">📞</div>
+          <h3>Telefon</h3>
+          <p><a href="tel:+4935052671100">035052 67100</a></p>
+          <p style="font-size: 0.9rem; color: var(--text-light);">Mo–Do: 07:30–18:00 Uhr<br>Fr: 07:30–15:00 Uhr</p>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-card-icon">✉️</div>
+          <h3>E-Mail</h3>
+          <p><a href="mailto:info@autoservice-motorgeraete.de">info@autoservice-motorgeraete.de</a></p>
+          <p style="font-size: 0.9rem; color: var(--text-light);">Wir antworten innerhalb von 24h</p>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-card-icon">📍</div>
+          <h3>Adresse</h3>
+          <p>Frauensteinerstr. 31</p>
+          <p>01744 Dippoldiswalde OT Sadisdorf</p>
+          <p style="font-size: 0.9rem; color: var(--text-light); margin-top: 0.5rem;">Sachsen - Deutschland</p>
+        </div>
+      </div>
+
+      <div class="highlight-section" style="margin-top: 3rem;">
+        <h3>Ihr Ansprechpartner vor Ort in Dippoldiswalde</h3>
+        <p><strong>Michael Becker – Ihr Kfz-Meister</strong></p>
+        <p>Als inhabergeführte Meisterwerkstatt sind wir seit vielen Jahren für Kunden aus Dippoldiswalde und der gesamten Region Sächsische Schweiz-Osterzgebirge da. Kurze Wege, persönliche Beratung und schnelle Hilfe – auch in Notfällen.</p>
+        
+        <p style="margin-top: 1rem;"><strong>Handwerkskammer Dresden</strong><br>Am Lagerplatz 8, 01099 Dresden<br>HWK-Nr: 0311232</p>
+        
+        <p style="margin-top: 1rem;">Vereinbaren Sie jetzt Ihren Werkstatttermin telefonisch oder per E-Mail. Wir freuen uns auf Sie!</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Autoservice Becker</h3>
+          <p>Ihre Kfz-Meisterwerkstatt in Dippoldiswalde</p>
+          <p>Spezialisiert auf VW, Audi, Seat, Skoda</p>
+          <p style="margin-top: 1rem;">Stihl-Servicepartner</p>
+        </div>
+
+        <div class="footer-section">
+          <h3>Leistungen</h3>
+          <a href="#assistenzsysteme">Assistenzsysteme kalibrieren</a>
+          <a href="#leistungen">3D-Achsvermessung</a>
+          <a href="#leistungen">Inspektion & Reparatur</a>
+          <a href="#motorgeraete">Motorgeräte-Service</a>
+        </div>
+
+        <div class="footer-section">
+          <h3>Kontakt</h3>
+          <a href="tel:+4935052671100">035052 67100</a>
+          <a href="mailto:info@autoservice-motorgeraete.de">info@autoservice-motorgeraete.de</a>
+          <p style="margin-top: 1rem;">Frauensteinerstr. 31<br>01744 Dippoldiswalde OT Sadisdorf</p>
+        </div>
+
+        <div class="footer-section">
+          <h3>Öffnungszeiten</h3>
+          <p>Montag – Donnerstag:<br>07:30 – 18:00 Uhr</p>
+          <p style="margin-top: 0.5rem;">Freitag:<br>07:30 – 15:00 Uhr</p>
+          <p style="margin-top: 0.5rem;">Samstag:<br>Nach Vereinbarung</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Autoservice Becker | Michael Becker | Frauensteinerstr. 31, 01744 Dippoldiswalde OT Sadisdorf</p>
+        <p style="margin-top: 0.5rem;">Handwerkskammer Dresden | HWK-Nr: 0311232 | USt-IdNr: DE222666447</p>
+        <p style="margin-top: 0.5rem;"><a href="#" style="color: rgba(255,255,255,0.6);">Impressum</a> | <a href="#" style="color: rgba(255,255,255,0.6);">Datenschutz</a></p>
+        <p style="margin-top: 0.5rem; font-size: 0.85rem;">Dies ist ein Demo-Entwurf zur internen Abstimmung.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const navLinks = document.getElementById('navLinks');
+      navLinks.classList.toggle('active');
+    }
+
+    function toggleFAQ(element) {
+      element.classList.toggle('active');
+    }
+
+    // Close mobile menu when clicking a link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById('navLinks').classList.remove('active');
+      });
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
